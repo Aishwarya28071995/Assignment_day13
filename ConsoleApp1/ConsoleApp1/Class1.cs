@@ -11,7 +11,7 @@ namespace ConsoleApp1
 
         public int ReturnMaxNumber(int[] array)
         {
-            return array[1];
+            return array[2];
         }
     }
 }
