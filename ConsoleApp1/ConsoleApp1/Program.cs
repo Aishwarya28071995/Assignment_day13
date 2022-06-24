@@ -6,9 +6,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int[] array = { 112, 314, 432, 555, 678 };
-            GenericMaximum<int> generic = new GenericMaximum<int>(array);
-            generic.PrintMaxValue();
+            Maximum max = new Maximum();
+            int maxNumber = max.FindMaximum(10, 20, 30);
+            Console.WriteLine("Maximum number is " + maxNumber);
 
         }
     }

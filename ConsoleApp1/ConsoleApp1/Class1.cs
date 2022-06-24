@@ -6,38 +6,33 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class GenericMaximum<T> where T:IComparable
+    internal class Maximum
     {
-        public T[] value;
-
-        public GenericMaximum(T[] value)
+       
+        public int FindMaximum(int num1,int num2,int num3)
         {
-            this.value = value;
-            
-        }
+            int temp;
+            if(num1.CompareTo(num2)>0 && num1.CompareTo(num3)>0)
+            {
 
-        public T[] Sort(T[] values)
-        {
-            Array.Sort(values);
-            return values;
-        }
+                return num1;
+            }
 
-        public T MaxValue(params T[] values)
-        {
-            var sorted_values = Sort(values);
-            return sorted_values[^1];
-        }
+            else if(num2.CompareTo(num1)>0 && num2.CompareTo(num3)>0)
+            {
+                temp = num1;
+                num1 = num2;
+                num2 = temp;
 
-        public T MaxMethod()
-        {
-            var max = MaxValue(this.value);
-            return max;
-        }
-
-        public void PrintMaxValue()
-        {
-            var max = MaxValue(this.value);
-            Console.WriteLine("maximum value is " + max);
+                return num1;
+            }
+            else
+            {
+                temp = num1;
+                num1 = num3;
+                num3 = temp;
+                return num1;
+            }
         }
 
         
