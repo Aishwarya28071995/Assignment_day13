@@ -1,27 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace ConsoleApp1
 {
-    internal class FindMaximum<T> where T:IComparable
+    internal class Program
     {
-        public  static T maximum(T num1, T num2, T num3)
+        static void Main(string[] args)
         {
-            if (num1.CompareTo(num2) > 0 && num2.CompareTo(num3) > 0)
-            {
-                return num1;
-            }
-            else if (num2.CompareTo(num1) > 0 && num2.CompareTo(num3) > 0)
-            {
-                return num2;
-            }
-            else
-            {
-                return num3;
-            }
+            int num1 = 20;
+            int num2 = 25;
+            int num3 = 30;
+            GenericMaximum<int> maximum = new GenericMaximum<int>(num1,num2,num3);
+            int max = maximum.MaxMethod();
+            Console.WriteLine(max);
+
         }
     }
 }
